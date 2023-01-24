@@ -8,7 +8,7 @@ import { Following } from "./following";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const login_status = localStorage.getItem('variable');
+  // const login_status = localStorage.getItem('variable');
   const [currentForm, setCurrentForm] = useState('login');
   const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -16,18 +16,18 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={
+        {/* <Route path="/" element={
           login_status === "true" ? <div className="App"><Profile></Profile></div> :
             currentForm === "login" ?
               <div className="App"><Login onFormSwitch={toggleForm}></Login></div>
               :
               < div className="App"><Register onFormSwitch={toggleForm} ></Register></div>
         }>
-        </Route>
-        {/* <Route path="/signin" element={<div className="App">{
+        </Route> */}
+        <Route path="/" element={<div className="App">{
           currentForm === "login" ? <Login onFormSwitch={toggleForm}></Login> : <Register onFormSwitch={toggleForm} ></Register>
         }</div>}>
-        </Route> */}
+        </Route>
         <Route path="/profile" element={<div className="App"><Profile></Profile></div>}>
         </Route>
         <Route path="/followers" element={<div className="App"><Followers></Followers></div>}>

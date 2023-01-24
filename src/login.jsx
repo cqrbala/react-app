@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
 
 export const Login = (props) => {
     const navigate = useNavigate();
-    // useEffect(() => {
-    //     if (localStorage.getItem('variable') === 'true') {
-    //         navigate("/profile")
-    //     }
-    //     else {
-    //         console.log(localStorage.getItem('variable'));
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (localStorage.getItem('variable') === 'true') {
+            navigate("/profile")
+        }
+        else {
+            console.log(localStorage.getItem('variable'));
+        }
+    }, []);
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -20,7 +21,7 @@ export const Login = (props) => {
         if (username === "admin" && password === "admin") {
             localStorage.setItem('variable', 'true');
             console.log("success");
-            navigate('/profile');
+            navigate("/profile");
         }
     }
 
