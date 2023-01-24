@@ -3,6 +3,8 @@ import './App.css';
 import { Login } from "./login";
 import { Register } from "./register";
 import { Profile } from "./Profile";
+import { Followers } from "./followers";
+import { Following } from "./following";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -27,6 +29,10 @@ function App() {
         }</div>}>
         </Route> */}
         <Route path="/profile" element={<div className="App"><Profile></Profile></div>}>
+        </Route>
+        <Route path="/followers" element={<div className="App"><Followers></Followers></div>}>
+        </Route>
+        <Route path="/following" element={<div className="App"><Following></Following></div>}>
         </Route>
       </Routes>
     </BrowserRouter >
